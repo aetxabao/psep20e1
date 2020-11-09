@@ -10,13 +10,13 @@ namespace taskprodcons
             this.Valor = valor;
         }
         public void Incrementar(int valor){
-            //lock (token)
+            lock (token)
             {
                 this.Valor += valor;
             }
         }
         public void Decrementar(int valor){
-            //lock (token)
+            lock (token)
             {
                 this.Valor -= valor;
             }
