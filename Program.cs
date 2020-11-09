@@ -31,7 +31,7 @@ namespace latlon
 
                 fullAddress = address + ", " + city + ", spain";
 
-                string json = provider.RequestData(fullAddress);               
+                string json = await provider.RequestData(fullAddress);               
                 
                 Console.WriteLine("Respuesta: " + json);
                 
