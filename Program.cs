@@ -5,7 +5,7 @@ namespace latlon
 {
     public class Program
     {
-        public static async Task Main()
+        public static void Main()
         {
             string city = "";
             string address = "";
@@ -31,7 +31,7 @@ namespace latlon
 
                 fullAddress = address + ", " + city + ", spain";
 
-                string json = provider.RequestData(fullAddress);               
+                string json = provider.RequestData(fullAddress).Result;               
                 
                 Console.WriteLine("Respuesta: " + json);
                 
