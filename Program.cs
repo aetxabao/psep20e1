@@ -8,19 +8,19 @@ namespace prodconsthreads
         static void Main()
         {
             Caja caja = new Caja(0); 
-            Entradas entradas = new Entradas(caja);
-            Salidas salidas = new Salidas(caja);
+            
+
 
             Console.WriteLine("INI");
+            
 
-            entradas.Start();
-            salidas.Start();
 
-            entradas.Finish();
-            caja.Avisar();
-            salidas.Finish();
-            caja.Cerrar();
 
+
+
+
+
+        
             Console.WriteLine("FIN");
         }
     }
