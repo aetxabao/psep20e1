@@ -24,15 +24,16 @@ namespace prodconsthreads
         public void Decrementar(int valor){
             lock (token)
             {
-                
-
+                if(!estaCerrada){
+                    while (this.Valor < valor){
+                        if (estaCerrada) return;
                         Console.WriteLine("- {0} !!! {1}", valor, Valor);
-                        
-
-
+                        Monitor.Wait(token);
+                    }
+                    if (!estaCerrada){
+                        this.Valor -= valor;
                         Console.WriteLine("- {0} --> {1}", valor, Valor);
-                        
-                        
+                    }
                 }
             }
         }
